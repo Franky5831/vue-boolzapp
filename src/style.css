@@ -3,18 +3,23 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
 /*.debug{}*/
+
+
+body{
+
+}
 
 header{
     background-color: #EAEAEA;
 }
 
-header .row .col-5{
+header .row .col-5, header .row .col-7{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+header .row .col-5{
     border-right: 2px solid #B1B1B1;
 }
 header i{
@@ -22,7 +27,7 @@ header i{
     margin: 10px;
     color: #B1B1B1;
 }
-#userPfp{
+#userId{
     display: flex;
     align-items: center;
 }
@@ -31,6 +36,53 @@ img{
     border-radius: 50%;
     padding: 8px;
 }
-body h1{
+h1{
+    font-size: 20px !important;
+}
+
+#chatToUser{
+    display: flex;
+    flex-direction: row;
+}
+#ChatToUserId{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+body h2{
+    font-size: 15px;
+    color: #B1B1B1;
+}
+
+
+main .row{
+    height: 60vh;
+}
+main .col-7{
+    background-image: url("../img/mine.jpg");
+}
+#bannerRicevinotifiche{
+    background-color: #8EDAFC;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+#bannerRicevinotifiche i{
+    color: #8EDAFC;
     font-size: 30px;
+}
+#bannerRicevinotifiche .notiIconContainer{
+    background-color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bannerRicevinotifiche a{
+    color: #B1B1B1;
+}
+.containerRiceviNotifiche{
+    margin-left: 10px;
 }
