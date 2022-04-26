@@ -7,9 +7,25 @@
 
 
 body{
+    padding: 5% 5% 0% 5%;
+    background: -webkit-linear-gradient(90deg, #DCDBD2 85%, #009688 15% 60%);
+    background-repeat: no-repeat;
+    height: 100vh;
 
+    /*display: flex;*/
+    flex-direction: column;
+    justify-content: center;
 }
-
+#bodyContainer{
+    max-width: 1400px;
+    min-width: 600px;
+    max-height: 800px;
+    min-height: 400px;
+    margin: 0 auto;
+}
+div{
+    --bs-gutter-x: 0 !important;
+}
 header{
     background-color: #EAEAEA;
 }
@@ -60,7 +76,22 @@ main .row{
 }
 main .col-7{
     background-image: url("../img/mine.jpg");
+    display: flex;
+    flex-direction: column;
 }
+main .col-7 .messaggioRicevuto h1{
+    text-align: left;
+    padding: 20px;
+    background-color: red;
+}
+main .col-7 .messaggioInviato h1{
+    text-align: right;
+    padding: 20px;
+
+}
+
+
+
 #bannerRicevinotifiche{
     background-color: #8EDAFC;
     padding: 20px;
