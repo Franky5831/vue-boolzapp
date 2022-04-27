@@ -69,6 +69,10 @@ body h2{
     font-size: 15px;
     color: #B1B1B1;
 }
+body h3{
+    font-size: 10px;
+    color: #B1B1B1;
+}
 
 
 main .row{
@@ -76,19 +80,55 @@ main .row{
 }
 main .col-7{
     background-image: url("../img/mine.jpg");
-    display: flex;
-    flex-direction: column;
 }
-main .col-7 .messaggioRicevuto h1{
-    text-align: left;
-    padding: 20px;
-    background-color: red;
-}
-main .col-7 .messaggioInviato h1{
-    text-align: right;
-    padding: 20px;
 
+main .col-7 .messaggioRicevuto .messageContainer{
+    margin: 50px;
+    padding: 20px;
+    background-color: #D5F9BA;
+    border-radius: 10px;
+    float: right;
 }
+main .col-7 .messaggioInviato .messageContainer{
+    margin: 50px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    float: left;
+}
+.messageContainer{
+    display: flex;
+    align-items: flex-end;
+    align-content: center;
+    gap: 40px;
+}
+.messageContainer h2{
+    align-self: flex-end;
+}
+
+#searchTheUser{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+#searchTheUser i{
+    font-size: 20px;
+    color: #B1B1B1;
+}
+#searchTheUser input{
+    border: 0;
+    width: calc(100% - 40px);
+}
+
+
+
+
+
+
 
 
 
