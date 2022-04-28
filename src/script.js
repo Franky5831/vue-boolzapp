@@ -3,6 +3,7 @@ const app = new Vue({
     data:{
         contacts: [
             {
+                userN: '1',
                 name: 'Michele',
                 avatar: '_1',
                 visible: true,
@@ -25,6 +26,7 @@ const app = new Vue({
                 ],
             },
             {
+                userN: '2',
                 name: 'Fabio',
                 avatar: '_2',
                 visible: true,
@@ -47,6 +49,7 @@ const app = new Vue({
                 ],
             },
             {
+                userN: '3',
                 name: 'Samuele',
                 avatar: '_3',
                 visible: true,
@@ -69,6 +72,7 @@ const app = new Vue({
                 ],
             },
             {
+                userN: '4',
                 name: 'Alessandro B.',
                 avatar: '_4',
                 visible: true,
@@ -86,6 +90,7 @@ const app = new Vue({
                 ],
             },
             {
+                userN: '5',
                 name: 'Alessandro L.',
                 avatar: '_5',
                 visible: true,
@@ -103,6 +108,7 @@ const app = new Vue({
                 ],
             },
             {
+                userN: '6',
                 name: 'Claudia',
                 avatar: '_6',
                 visible: true,
@@ -125,6 +131,7 @@ const app = new Vue({
                 ],
             },
             {
+                userN: '7',
                 name: 'Federico',
                 avatar: '_7',
                 visible: true,
@@ -142,6 +149,7 @@ const app = new Vue({
                 ],
             },
             {
+                userN: '8',
                 name: 'Davide',
                 avatar: '_8',
                 visible: true,
@@ -169,6 +177,12 @@ const app = new Vue({
         message: ''
     },
     methods:{
-
+        getdate(date){
+            return moment(date).fromNow()
+        },
     }
 })
+
+
+
+

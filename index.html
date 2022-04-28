@@ -27,9 +27,9 @@
                 </div>
                 <div class="col-7 debug">
                     <div id="chatToUser">
-                        <img src="img/avatar_1.jpg">
+                        <img :src="'img/avatar'+contacts[activeContactIndex].avatar+'.jpg'">
                         <div id="ChatToUserId">
-                            <h1>Michele</h1>
+                            <h1>{{contacts[activeContactIndex].name}}</h1>
                             <h2>Ultimo accesso...</h2>
                         </div>
                     </div>
@@ -62,11 +62,11 @@
                     </div>
 
                     <ul id="sezioneElencoContatti">
-                        <li class="contatto active" id="contatto1" v-for="contact in contacts">
+                        <li class="contatto" :class="{'active': activeContactIndex === index}" :id="'contatto'+contact.userN" v-for="(contact, index) in contacts" :key="index" @click="activeContactIndex= index">
                             <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="">
                             <div id="contattoContainerTesto">
                                 <h1>{{contact.name}}</h1>
-                                <h2>Ultimo messggio inviato 12:00</h2>
+                                <h2>Ultimo messggio inviato {{contact.messages[contact.messages.length - 1].date}}</h2>
                             </div>
                         </li>
                     </ul>
@@ -75,7 +75,7 @@
                     <span class="messaggio" v-for="message in contacts[activeContactIndex].messages" :class="message.status==='sent'? 'sent':'received'">
                         <div class="messageContainer">
                             <h1>{{message.message}}</h1>
-                            <h3>12:00</h3>
+                            <h3>{{getdate()}}</h3>
                         </div>
                     </span>
                     <input type="text" name="writeMessage" id="writeMessage" placeholder="scrivi un messaggio">
@@ -86,6 +86,7 @@
 
 
     <!--<footer></footer>-->
+    <script src="lib/moment/moment.min.js"></script>
     <script src="src/script.js"></script>
 </body>
 </html>

@@ -86,7 +86,6 @@ main .row{
 }
 main .col-7{
     background-image: url("../img/mine.jpg");
-    height: 100%;
     position: relative;
 
 }
@@ -94,6 +93,7 @@ main .col-7{
 #writeMessage{
     width: 100%;
     bottom: 0;
+    left: 0;
     position: absolute;
     height: 40px;
 }
@@ -150,13 +150,15 @@ main .col-5{
 }
 #sezioneElencoContatti{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    overflow: auto;
 }
 
 
 
 #sezioneElencoContatti .contatto{
     width: 100%;
+    border-bottom: 1px solid #B1B1B1;
 }
 
 #sezioneElencoContatti .contatto img{
@@ -166,7 +168,7 @@ main .col-5{
     display: inline-block;
 }
 #sezioneElencoContatti .active{
-    background-color: #B1B1B1;
+    background-color: #E9EBEB;
 }
 
 
