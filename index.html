@@ -62,26 +62,19 @@
                     </div>
 
                     <ul id="sezioneElencoContatti">
-                        <li class="contatto active" id="contatto1">
-                            <img src="img/avatar_1.jpg" alt="">
+                        <li class="contatto active" id="contatto1" v-for="contact in contacts">
+                            <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="">
                             <div id="contattoContainerTesto">
-                                <h1>Michele</h1>
+                                <h1>{{contact.name}}</h1>
                                 <h2>Ultimo messggio inviato 12:00</h2>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="col-7">
-                    <span class="messaggio received">
+                    <span class="messaggio" v-for="message in contacts[activeContactIndex].messages" :class="message.status==='sent'? 'sent':'received'">
                         <div class="messageContainer">
-                            <h1>Messaggio ricevuto</h1>
-                            <h3>12:00</h3>
-                        </div>
-
-                    </span>
-                    <span class="messaggio sent">
-                        <div class="messageContainer">
-                            <h1>Messaggio inviato</h1>
+                            <h1>{{message.message}}</h1>
                             <h3>12:00</h3>
                         </div>
                     </span>
