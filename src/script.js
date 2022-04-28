@@ -1,6 +1,6 @@
 const app = new Vue({
-    el: '#app',
-    data: {
+    el: '#bodyContainer',
+    data:{
         contacts: [
             {
                 name: 'Michele',
@@ -162,11 +162,13 @@ const app = new Vue({
                         status: 'received'
                     }
                 ],
-            }
-        ]
-        
+            },
+        ],
+        activeContactIndex: 0,
+        searchText: '',
+        message: ''
     },
-    methods: {
+    methods:{
 
     }
 })

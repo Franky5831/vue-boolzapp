@@ -3,6 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+ul{
+    padding-left: 0 !important;
+}
+li{
+    list-style: none;
+}
 /*.debug{}*/
 
 
@@ -80,20 +86,30 @@ main .row{
 }
 main .col-7{
     background-image: url("../img/mine.jpg");
+    height: 100%;
+    position: relative;
+
 }
 
-main .col-7 .messaggioRicevuto .messageContainer{
+#writeMessage{
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    height: 40px;
+}
+
+.messaggio{
     margin: 50px;
     padding: 20px;
-    background-color: #D5F9BA;
     border-radius: 10px;
+    clear: both;
+}
+.received{
+    background-color: #D5F9BA;
     float: right;
 }
-main .col-7 .messaggioInviato .messageContainer{
-    margin: 50px;
-    padding: 20px;
+.sent{
     background-color: white;
-    border-radius: 10px;
     float: left;
 }
 .messageContainer{
@@ -132,11 +148,26 @@ main .col-7 .messaggioInviato .messageContainer{
 main .col-5{
     background-color: white;
 }
+#sezioneElencoContatti{
+    display: flex;
+    flex-direction: row;
+}
 
 
 
+#sezioneElencoContatti .contatto{
+    width: 100%;
+}
 
-
+#sezioneElencoContatti .contatto img{
+    display: inline-block;
+}
+ #contattoContainerTesto{
+    display: inline-block;
+}
+#sezioneElencoContatti .active{
+    background-color: #B1B1B1;
+}
 
 
 #bannerRicevinotifiche{
@@ -164,3 +195,5 @@ main .col-5{
 .containerRiceviNotifiche{
     margin-left: 10px;
 }
+
+
