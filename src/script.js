@@ -183,11 +183,32 @@ const app = new Vue({
         sendMessage(){
             let today = new Date();
             const newMessage ={
-                date: (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear()+' '+today.getHours()+':'+today.getMinutes()+':'+today.getSeconds(),
+                date: moment("2020-04-04 11:45:26.123").fromNow(),
                 message: this.message,
                 status: 'received'
 
             };
+            console.log(newMessage.date)
+
+            const dateTimeAgo = moment().fromNow();
+            console.log(dateTimeAgo);
+
+
+
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
             this.contacts[this.activeContactIndex].messages.push(newMessage);
             this.message='';
         }
