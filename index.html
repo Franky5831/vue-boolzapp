@@ -78,7 +78,7 @@
                             <h3>{{getdate()}}</h3>
                         </div>
                     </span>
-                    <input type="text" name="writeMessage" id="writeMessage" placeholder="scrivi un messaggio">
+                    <input type="text" name="writeMessage" id="writeMessage" placeholder="scrivi un messaggio" v-model="message" @keyup.enter="sendMessage()">
                 </div>
             </div>
         </main>

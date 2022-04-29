@@ -180,6 +180,17 @@ const app = new Vue({
         getdate(date){
             return moment(date).fromNow()
         },
+        sendMessage(){
+            let today = new Date();
+            const newMessage ={
+                date: (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear()+' '+today.getHours()+':'+today.getMinutes()+':'+today.getSeconds(),
+                message: this.message,
+                status: 'received'
+
+            };
+            this.contacts[this.activeContactIndex].messages.push(newMessage);
+            this.message='';
+        }
     }
 })
 
