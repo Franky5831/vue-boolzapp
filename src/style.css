@@ -13,7 +13,7 @@ li{
 
 
 body{
-    padding: 5% 5% 0% 5%;
+    padding: 6vh 5% 0% 5%;
     background: -webkit-linear-gradient(90deg, #DCDBD2 85%, #009688 15% 60%);
     background-repeat: no-repeat;
     height: 100vh;
@@ -82,12 +82,16 @@ body h3{
 
 
 main .row{
-    height: 60vh;
+    height: 80vh;
+    flex-wrap: nowrap;
 }
 main .col-7{
     background-image: url("../img/mine.jpg");
     position: relative;
-
+}
+#chatContainer{
+    height: 100%;
+    overflow: auto;
 }
 
 #writeMessage{
@@ -147,13 +151,15 @@ main .col-7{
 
 main .col-5{
     background-color: white;
-}
-#sezioneElencoContatti{
     display: flex;
     flex-direction: column;
+}
+#sezioneElencoContatti{
     overflow: auto;
 }
-
+#sezioneElencoContatti{
+    margin-bottom: 0 !important;
+}
 
 
 #sezioneElencoContatti .contatto{

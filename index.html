@@ -57,7 +57,7 @@
                     <div id="messageToUsersSection">
                         <div id="searchTheUser">
                             <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                            <input type="text" name="searchForUser" id="searchForUser" placeholder="cerca o inizia una nuova chat">
+                            <input type="text" name="searchForUser" id="searchForUser" v-model="lookedUpMember" placeholder="cerca o inizia una nuova chat" @keyup.enter="findChatUser()">
                         </div>
                     </div>
 
@@ -72,12 +72,14 @@
                     </ul>
                 </div>
                 <div class="col-7">
-                    <span class="messaggio" v-for="message in contacts[activeContactIndex].messages" :class="message.status==='sent'? 'sent':'received'">
-                        <div class="messageContainer">
-                            <h1>{{message.message}}</h1>
-                            <h3>{{getdate()}}</h3>
-                        </div>
-                    </span>
+                    <div id="chatContainer">
+                        <span class="messaggio" v-for="message in contacts[activeContactIndex].messages" :class="message.status==='sent'? 'sent':'received'">
+                            <div class="messageContainer">
+                                <h1>{{message.message}}</h1>
+                                <h3>{{message.date}}</h3>
+                            </div>
+                        </span>
+                    </div>
                     <input type="text" name="writeMessage" id="writeMessage" placeholder="scrivi un messaggio" v-model="message" @keyup.enter="sendMessage()">
                 </div>
             </div>

@@ -174,43 +174,59 @@ const app = new Vue({
         ],
         activeContactIndex: 0,
         searchText: '',
-        message: ''
+        message: '',
+        lookedUpMember: ''
     },
     methods:{
-        getdate(date){
+        /*getdate(date){
+            console.log(date)
             return moment(date).fromNow()
-        },
+        },*/
         sendMessage(){
-            let today = new Date();
-            const newMessage ={
-                date: moment("2020-04-04 11:45:26.123").fromNow(),
-                message: this.message,
-                status: 'received'
-
-            };
-            console.log(newMessage.date)
-
-            const dateTimeAgo = moment().fromNow();
-            console.log(dateTimeAgo);
-
-
-
-
+            function onlySpaces(str) {
+                return str.trim().length === 0;
+              }
+            if(onlySpaces(this.message)){
+                console.log('non valido')
+            }else{
+                const newMessage ={
+                    date: "10/01/2020 19:40:04",
+                    message: this.message,
+                    status: 'received'
+                };
+                this.contacts[this.activeContactIndex].messages.push(newMessage);
+                this.message='';
 
 
-
-
-
-
-
-
-
-
-
-
-            this.contacts[this.activeContactIndex].messages.push(newMessage);
-            this.message='';
+                const replyMessagesList = [
+                    'certo',
+                    'no',
+                    'si',
+                    'forse',
+                    'guarda JoJo',
+                    'leggiti pandora hearts'
+                ]
+                let i = Math.floor(Math.random()*6)
+                console.log(i)
+                console.log(replyMessagesList[i])
+                const newMessage2 ={
+                    date: "10/01/2020 19:40:09",
+                    message: replyMessagesList[i],
+                    status: 'sent'
+                };
+                this.contacts[this.activeContactIndex].messages.push(newMessage2);
+            }
+        },
+        findChatUser(){
+            for(let i=0; i<=this.contacts.length; i++){
+                if(!(this.contacts[i].name.toLowerCase().startsWith(this.lookedUpMember.toLowerCase()))){
+                    console.log('il membro eliminato si trova in posizione '+ i);
+                    this.contacts.splice(i, 1);
+                    console.log(this.contacts)
+                }
+            }
         }
+
     }
 })
 
