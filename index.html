@@ -62,7 +62,7 @@
                     </div>
 
                     <ul id="sezioneElencoContatti">
-                        <li class="contatto" :class="{'active': activeContactIndex === index}" :id="'contatto'+contact.userN" v-for="(contact, index) in contacts" :key="index" @click="activeContactIndex= index">
+                        <li class="contatto" v-if="contact.visible" v-if="contact.visible"  :class="{'active': activeContactIndex === index}" :id="'contatto'+contact.userN" v-for="(contact, index) in contacts" :key="index" @click="activeContactIndex= index">
                             <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="">
                             <div id="contattoContainerTesto">
                                 <h1>{{contact.name}}</h1>
