@@ -221,9 +221,11 @@ const app = new Vue({
             for(let i=0; i<=this.contacts.length; i++){
                 if(!(this.contacts[i].name.toLowerCase().includes(this.lookedUpMember.toLowerCase()))){
                     console.log('il membro eliminato si trova in posizione '+ i);
-                    this.contacts.splice(i, 1);
-                    console.log(this.contacts)
+                    this.contacts[i].visible = false;
+                }else{
+                    this.contacts[i].visible = true;
                 }
+                console.log(this.contacts)
             }
         }
 
